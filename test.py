@@ -1,8 +1,5 @@
-dict = {
-    'name' : ['head_gear']
-}
+a = [[1,2] , [2,3]]
 
-dict['name'] += ['nono']
-print(dict)
-
-
+for chick in a:
+    print(chick, end="")
+    print(111)
