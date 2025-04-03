@@ -1,5 +1,2 @@
-a = [[1,2] , [2,3]]
-
-for chick in a:
-    print(chick, end="")
-    print(111)
+a = [[1] * 2 for _ in range(2)]
+print(a)
