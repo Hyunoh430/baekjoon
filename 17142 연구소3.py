@@ -24,14 +24,18 @@ def bfs(vir):
     for v in vir:
         q.append(v)
         result[v[0]][v[1]] = 0
-
+    check = 0
     while q:
+        check += 1
         x, y = q.popleft()
+        if check <= M:
+            result[x][y] = 0
         for i in range(4):
             nx = x + dx[i]
             ny = y + dy[i]
             if 0 <= nx < N and 0 <= ny < N:
-                if data[nx][ny] != 1 and result[nx][ny] == 0:
+                #만약 벽이 아니고 | 아직 전염을 안했고 | 바이러스가 아니라면?
+                if data[nx][ny] != 1 and result[nx][ny] == 0: #and data[nx][ny] != 2:
                     result[nx][ny] = result[x][y] + 1
                     q.append([nx, ny])
 
