@@ -1,5 +1,5 @@
 N, M, H = map(int, input().split())
-ladder = [[False] * N for _ in range(H + 1)]
+ladder = [[False] * (N + 1) for _ in range(H + 1)]
 
 for _ in range(M):
     a, b = map(int, input().split())
@@ -22,9 +22,11 @@ def check():
 
 
 def dfs(level, pos, cnt, target):
+
     if cnt == target:
         return check()
-
+    if check():
+        return True
     for i in range(level, H + 1):
         start = pos if i == level else 1
         for j in range(start, N):
@@ -45,11 +47,13 @@ def dfs(level, pos, cnt, target):
 
     return False
 
-
-answer = -1
-for target in range(4):
-    if dfs(1, 1, 0, target):
-        answer = target
-        break
+if check():
+    print(0)
+else:
+    answer = -1
+    for target in range(4):
+        if dfs(1, 1, 0, target):
+            answer = target
+            break
 
 print(answer)
