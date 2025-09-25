@@ -13,7 +13,7 @@ def micro_input():
             graph[i][j] = micro_id
 
     # 올바른 범위로 수정
-    for i in range(1, micro_id + 1):
+    for i in range(1, micro_id):
         if count_components(i) >= 2:
             remove(i)
 
@@ -77,7 +77,7 @@ def micro_move(current_micro_count):
         if size > 0:
             micro_info.append([size, mid, shape])
 
-    micro_info.sort(reverse=True)
+    micro_info.sort(key=lambda x: (-x[0], x[1]))
 
     new_graph = [[0] * N for _ in range(N)]
 
