@@ -12,7 +12,7 @@ for i in range(N):      #우유 = 1, 초코 = 2, 민트 = 4, 초코우유 = 3, �
         else:
             F[i][j] = 1
 
-B = []
+B = []  #신앙심
 for i in range(N):
     B.append(list(map(int, input().split())))
 
@@ -22,7 +22,7 @@ def morning():
             B[i][j] += 1
 
 
-dx = [-1, 1, 0, 0]
+dx = [-1, 1, 0, 0]  #위,아래,왼쪽,오른쪽
 dy = [0, 0, -1, 1]
 def choose_president(x, y, visited):
     q = deque()
@@ -69,10 +69,11 @@ def lunch():
     for x, y, c in presidents:
         B[x][y] += c
 
+
+
 morning()
 lunch()
-for i in range(N):
-    print(B[i])
+
 
 
 

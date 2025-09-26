@@ -1,6 +1,3 @@
-from collections import Counter
-
-s = "programming"
-counter = Counter(s)
-print(counter)
-print(counter.items())
+a = [[1,2],[2,3],[4,5]]
+print(*a)
+print(a)
